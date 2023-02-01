@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-bool checkInput(string upper, string middle, string lower) {
+bool checkInput(std::string upper, std::string middle, std::string lower) {
 
     for (int i = 0; i < 3; i++) {
         if (upper[i] == 'X' && middle[i] == 'X' && lower[i] == 'X') return false;
