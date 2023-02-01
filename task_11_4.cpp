@@ -16,18 +16,16 @@ bool checkInput(std::string upper, std::string middle, std::string lower) {
     }
 
     for (int i = 0; i < 3; i++) {
-        if (upper[0] == 'X' && middle[0] == 'X' && lower[0] == 'X') return false;
-        if (upper[1] == 'X' && middle[1] == 'X' && lower[1] == 'X') return false;
-        if (upper[2] == 'X' && middle[2] == 'X' && lower[2] == 'X') return false;
-        if (upper[0] == 'O' && middle[0] == 'O' && lower[0] == 'O') return false;
-        if (upper[1] == 'O' && middle[1] == 'O' && lower[1] == 'O') return false;
-        if (upper[2] == 'O' && middle[2] == 'O' && lower[2] == 'O') return false;
+        for (int j = 0; j < 3; j++) {
+            if (upper[j] == 'X' && middle[j] == 'X' && lower[j] == 'X') return false;
+            if (upper[j] == 'O' && middle[j] == 'O' && lower[j] == 'O') return false;
+        }
     }
 
-    if (upper[0] == 'X' && middle[1] == 'X' && lower[2] == 'X') return false;
-    if (upper[2] == 'X' && middle[1] == 'X' && lower[0] == 'X') return false;
-    if (upper[0] == 'O' && middle[1] == 'O' && lower[2] == 'O') return false;
-    if (upper[2] == 'O' && middle[1] == 'O' && lower[0] == 'O') return false;
+    for (int i = 0; i < 3; i++) {
+        if (upper[i] == 'X' && middle[1] == 'X' && lower[2 - i] == 'X') return false;
+        if (upper[i] == 'O' && middle[1] == 'O' && lower[2 - i] == 'O') return false;
+    }
 
     return true;
 }
