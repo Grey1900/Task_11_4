@@ -1,8 +1,11 @@
 .vs/
 .vscode/
 .idea/
+.ccls-cache/
 cmake-build-debug/
 cmake-build-debug-mingw/
 *.txt
 *.md
 *.exe
+*.replit
+*.nix
